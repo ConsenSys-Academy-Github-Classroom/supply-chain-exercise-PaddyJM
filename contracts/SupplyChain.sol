@@ -45,6 +45,10 @@ contract SupplyChain {
 
   // Create a modifer, `isOwner` that checks if the msg.sender is the owner of the contract
 
+  modifier isOwner() {
+    require(msg.sender == owner);
+    _;
+  }
   // <modifier: isOwner
 
   modifier verifyCaller (address _address) { 
