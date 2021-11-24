@@ -6,7 +6,7 @@ contract SupplyChain {
   // <owner>
   address public owner = msg.sender;
   // <skuCount>
-
+  uint public skuCount;
   // <items mapping>
 
   // <enum State: ForSale, Sold, Shipped, Received>
