@@ -8,7 +8,7 @@ contract SupplyChain {
   // <skuCount>
   uint public skuCount;
   // <items mapping>
-
+  mapping (uint => Item) items;
   // <enum State: ForSale, Sold, Shipped, Received>
   enum State {
     ForSale,
