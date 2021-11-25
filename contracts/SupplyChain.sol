@@ -165,7 +165,12 @@ contract SupplyChain {
   //    - the person calling this function is the seller. 
   // 2. Change the state of the item to shipped. 
   // 3. call the event associated with this function!
-  function shipItem(uint sku) public {}
+  function shipItem(uint sku) public {
+    require(items[sku].state == State.Sold);
+    require(items[sku].seller == msg.sender);
+    items[sku].state = State.Shipped;
+    emit LogShipped(sku);
+  }
 
   // 1. Add modifiers to check 
   //    - the item is shipped already 
